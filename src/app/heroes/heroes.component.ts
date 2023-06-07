@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Hero} from "../hero";
-import {HeroService} from "../hero.service";
+import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  styleUrls: ['./heroes.component.css'],
 })
 export class HeroesComponent implements OnInit {
   // heroes = HEROES;
@@ -14,10 +14,11 @@ export class HeroesComponent implements OnInit {
   //   const paddedId = hero.id < 10 ? '0' + hero.id : hero.id;
   //   return Object.assign({},hero, {id: paddedId});
   // });
-  // selectedHero?: Hero;
+  selectedHero?: Hero;
   heroes: Hero[] = [];
-  onSelect(hero:Hero):void{
-    //this.selectedHero = hero;
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
   }
 
   getHeroes(): void {
@@ -25,14 +26,13 @@ export class HeroesComponent implements OnInit {
   }
 
   hero: Hero = {
-    id:1,
-    name:'Windstorm'
+    id: 1,
+    name: 'Windstorm1120607home',
   };
 
-  constructor(private heroService:HeroService) { }
+  constructor(private heroService: HeroService) {}
 
   ngOnInit(): void {
     this.getHeroes();
   }
-
 }
